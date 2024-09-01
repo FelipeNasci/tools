@@ -11,4 +11,4 @@ call script.bat
 cd c://
 rmdir /s /q setup
 
-#pause
+::pause
