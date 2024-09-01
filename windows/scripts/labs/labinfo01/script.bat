@@ -1,9 +1,10 @@
+@echo off
 
 #get storage
 for /f "tokens=2 delims==" %%i in ('wmic diskdrive get size /value') do set "STORAGE=%%i"
 
 #get OS info
-@echo off
+
 for /f "tokens=2 delims==" %%i in ('wmic os get Caption /value') do set "OS_NAME=%%i"
 for /f "tokens=2 delims==" %%i in ('wmic os get Version /value') do set "OS_VERSION=%%i"
 for /f "tokens=2 delims==" %%i in ('wmic os get OSArchitecture /value') do set "OS_ARCH=%%i"
