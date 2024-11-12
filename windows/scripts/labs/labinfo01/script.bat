@@ -23,6 +23,10 @@ for /f "tokens=2 delims==" %%i in ('wmic diskdrive get size /value') do set "STO
 :: echo Total RAM: %TOTAL_RAM%
 :: echo STORAGE: %STORAGE%
 
+:: move this to other space
+start chrome "https://www.youtube.com/watch?v=1ZYbU82GVz4&t=5578s&ab_channel=SoothingRelaxation"
+
+
 :: Envia os dados para o servidor de eventos
 curl -X POST -H "Content-Type: application/json" -d "{\"name\": \"power-on\", \"unit\": \"MME\", \"place\": \"LABINFO-01\", \"hostName\": \"%HOST_NAME%\", \"meta\": {\"ram\": \"%TOTAL_RAM%\", \"storage\": \"%STORAGE%\", \"cpu\": \"%CPU_NAME%\"}}" https://catch-events.vercel.app/api/host/power-on
 
